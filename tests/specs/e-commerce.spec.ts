@@ -1,10 +1,8 @@
-import { test, expect } from "@playwright/test";
-import { HomePage } from "../pageobjects/home-page";
+import { test } from "../../base/page-object-model-fixture";
+import { expect } from "@playwright/test";
 
-test("Add product to cart", async ({ page }) => {
-  await page.goto("https://ecommerce-playground.lambdatest.io/");
-
-  const homePage = new HomePage(page);
+test("Add product to cart", async ({ page, homePage,baseURL }) => {
+  await page.goto(`${baseURL}`);
 
   await homePage.hoverMyAccountLink();
   await expect(homePage.logoutLink).toBeVisible();
