@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --project=\"Google Chrome\"",
+    "test_local": "npx playwright test --project=\"Google Chrome\"",
     "test_cloud": "npx playwright test --project=\"chrome:latest:MacOS Catalina@lambdatest\""
   },
   "keywords": [],
