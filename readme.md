@@ -21,7 +21,7 @@ This repo covers the following test journey as a part of End to End Testing
 - Run the following command in the terminal
 
   ### 1. Running tests in local:
-    -  `npm run test_local` >> Tests will run on Chromium on local machine
+    -  `npm run test_local` >> Tests will run on Chrome browser on local machine
 
   ### 2. Running tests on LambdaTest Cloud Grid
     - `npm run test_cloud` >> Tests will run on LambdaTest cloud platform on Chrome browser on Windows 10

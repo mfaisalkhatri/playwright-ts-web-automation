@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --headed"
+    "test_local": "npx playwright test --project=\"Google Chrome\"",
+    "test_cloud": "npx playwright test --project=\"chrome:latest:MacOS Catalina@lambdatest\""
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,8 @@
   "devDependencies": {
     "@playwright/test": "^1.45.0",
     "@types/node": "^20.14.9"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
   }
 }
