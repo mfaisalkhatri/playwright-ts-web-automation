@@ -1,6 +1,7 @@
 import { expect, chromium, test as baseTest } from "@playwright/test";
 import { HomePage } from "../tests/pageobjects/home-page";
 import { RegistrationPage } from "../tests/pageobjects/registration-page";
+import * as data from '../test-data/register-user-data.json';
 import dotenv from 'dotenv';
 import path from "path";
 
@@ -15,9 +16,9 @@ const capabilities = {
   browserName: "Chrome", // Browsers allowed: `Chrome`, `MicrosoftEdge`, `pw-chromium`, `pw-firefox` and `pw-webkit`
   browserVersion: "latest",
   "LT:Options": {
-    platform: "Windows 10",
+    platform: "macOS Sonoma OS",
     build: "Playwright Test Build",
-    name: "Playwright Test",
+    name: "End to End test ",
     user: process.env.LT_USERNAME,
     accessKey: process.env.LT_ACCESS_KEY,
     network: true,
@@ -101,11 +102,11 @@ const testPages = baseTest.extend<pages,{workerStorageState: string;}>({
       await expect(registrationPage.pageTitle).toBeVisible();
     
       const myAccountPage = await registrationPage.registerUser(
-        "Johnny15",
-        "Bonzela15",
-        "johnn15@demo.com",
-        "0076765476",
-        "Password@123"
+        data.fistName,
+        data.lastName,
+        data.email,
+        data.telephoneNumber,
+        data.password
       );
       await expect(myAccountPage.pageHeader).toBeVisible();
     
