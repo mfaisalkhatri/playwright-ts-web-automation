@@ -11,9 +11,8 @@ type pages = {
 };
 
 dotenv.config({ path: path.resolve(__dirname, '.env') });
-// LambdaTest capabilities
 const capabilities = {
-  browserName: "Chrome", // Browsers allowed: `Chrome`, `MicrosoftEdge`, `pw-chromium`, `pw-firefox` and `pw-webkit`
+  browserName: "Chrome",
   browserVersion: "latest",
   "LT:Options": {
     platform: "macOS Sonoma OS",
@@ -24,13 +23,12 @@ const capabilities = {
     network: true,
     video: true,
     console: true,
-    tunnel: false, // Add tunnel configuration if testing locally hosted webpage
-    tunnelName: "", // Optional
-    geoLocation: "", // country code can be fetched from https://www.lambdatest.com/capabilities-generator/
+    tunnel: false, 
+    tunnelName: "",
+    geoLocation: "",
   },
 };
 
-// Patching the capabilities dynamically according to the project name.
 const modifyCapabilities = (configName, testName) => {
   let config = configName.split("@lambdatest")[0];
   let [browserName, browserVersion, platform] = config.split(":");

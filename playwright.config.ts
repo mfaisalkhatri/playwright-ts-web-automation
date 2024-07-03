@@ -11,12 +11,12 @@ const config: PlaywrightTestConfig = {
                 viewport: { width: 1920, height: 1080 },
             },
         },
-        // {
-        //     name: "chrome:latest:Windows 10@lambdatest",
-        //     use: {
-        //         viewport: { width: 1280, height: 720 },
-        //     },
-        // },
+        {
+            name: "chrome:latest:Windows 10@lambdatest",
+            use: {
+                viewport: { width: 1280, height: 720 },
+            },
+        },
         {
             name: "Google Chrome",
             use: {
@@ -24,26 +24,22 @@ const config: PlaywrightTestConfig = {
                 channel: "chrome"
             }
          },
-        // {
-        //     name: "firefox",
-        //     use: {
-        //         ...devices["Desktop Firefox"]
-        //     }
-        // }
+        {
+            name: "firefox",
+            use: {
+                ...devices["Desktop Firefox"]
+            }
+        }
     ],
     testDir: "./tests",
 
     use: {
-        // connectOptions: {
-        //     wsEndpoint: `wss://cdp.lambdatest.com/playwright?capabilities=
-        //     ${encodeURIComponent(JSON.stringify(capabilities))}`
-        // },
         baseURL: "https://ecommerce-playground.lambdatest.io/",
         headless: false,
         screenshot: "on",
         video: "on",
         launchOptions: {
-            // slowMo: 1000
+             slowMo: 100
         },
     },
     timeout: 60 * 1000 * 5,
