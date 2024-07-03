@@ -18,13 +18,21 @@ This repo covers the following test journey as a part of End to End Testing
 
 ## How to run the Tests?
 
+- Clone the repository in your local machine by using the following command in the terminal
+  
+  - `git clone git@github.com:mfaisalkhatri/playwright-ts-web-automation.git`
+
+- Navigate to the root folder of the project and install all the dependencies using the following command
+  
+  - `npm install`
+
 - Run the following command in the terminal
 
   ### 1. Running tests in local:
     -  `npm run test_local` >> Tests will run on Chrome browser on local machine
 
   ### 2. Running tests on LambdaTest Cloud Grid
-    - `npm run test_cloud` >> Tests will run on LambdaTest cloud platform on Chrome browser on Windows 10
+    - `npm run test_cloud` >> Tests will run on LambdaTest cloud platform on Chrome browser on MacOS Sonoma
 
 ## :question: Need Assistance?
 
