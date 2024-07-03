@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test_local": "npx playwright test --project=\"Google Chrome\"",
-    "test_cloud": "npx playwright test --project=\"chrome:latest:MacOS Catalina@lambdatest\""
+    "test_cloud": "npx playwright test --project=\"chrome:latest:macOS Sonoma@lambdatest\""
   },
   "keywords": [],
   "author": "",

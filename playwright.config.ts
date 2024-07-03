@@ -5,7 +5,7 @@ const config: PlaywrightTestConfig = {
     
     projects: [
         { 
-            name: "chrome:latest:MacOS Catalina@lambdatest",
+            name: "chrome:latest:macOS Sonoma@lambdatest",
         
             use: {
                 viewport: { width: 1920, height: 1080 },
