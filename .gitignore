@@ -6,3 +6,5 @@ node_modules/
 /playwright/.auth/
 /jsonReports/
 /.env
+/.DS_Store
+/base/.DS_Store
