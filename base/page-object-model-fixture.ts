@@ -81,7 +81,7 @@ const testPages = baseTest.extend<pages,{workerStorageState: string;}>({
   registrationPage: async ({ page }, use) => {
     await use(new RegistrationPage(page));
   },
-  storageState: ({ workerStorageState }, use) => use(workerStorageState),
+  storageState: ({ workerStorageState}, use) => use(workerStorageState),
   workerStorageState: [
     async ({ browser }, use) => {
       const id = test.info().parallelIndex;
@@ -89,7 +89,7 @@ const testPages = baseTest.extend<pages,{workerStorageState: string;}>({
         test.info().project.outputDir,
         `.auth/${id}.json`
       );
-
+    
       const page = await browser.newPage({ storageState: undefined });
       await page.goto("https://ecommerce-playground.lambdatest.io/");
 
