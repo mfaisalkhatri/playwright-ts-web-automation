@@ -11,10 +11,11 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.45.0",
-    "@types/node": "^20.14.9"
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.2.0"
   },
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "dotenv": "^17.2.1",
+    "npm-check-updates": "^18.0.2"
   }
 }
