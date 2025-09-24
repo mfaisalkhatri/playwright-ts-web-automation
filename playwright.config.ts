@@ -42,7 +42,7 @@ const config: PlaywrightTestConfig = {
              slowMo: 100
         },
     },
-    timeout: 60 * 1000 * 5,
+    timeout: 60 * 1000 * 1,
     retries: 0,
     reporter: [["dot"], ["json", {
         outputFile: "jsonReports/jsonReport.json"

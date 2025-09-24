@@ -7,7 +7,8 @@
     "test_cloud": "npx playwright test --project=\"chrome:latest:macOS Sonoma@lambdatest\"",
     "test_click": "npx playwright test specs/basic-click.spec.ts --project=\"Google Chrome\"",
     "test_right_click": "npx playwright test specs/right-click.spec.ts --project=\"Google Chrome\"",
-    "test_double_click": "npx playwright test specs/double-click.spec.ts --project=\"Google Chrome\""
+    "test_double_click": "npx playwright test specs/double-click.spec.ts --project=\"Google Chrome\"",
+    "test_hover_force_click": "npx playwright test specs/mouse-hover.spec.ts --project=\"Google Chrome\""
   },
   "keywords": [],
   "author": "",
