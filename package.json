@@ -4,18 +4,19 @@
   "main": "index.js",
   "scripts": {
     "test_local": "npx playwright test --project=\"Google Chrome\"",
-    "test_cloud": "npx playwright test --project=\"chrome:latest:macOS Sonoma@lambdatest\""
+    "test_cloud": "npx playwright test --project=\"chrome:latest:macOS Sonoma@lambdatest\"",
+    "test_click": "npx playwright test specs/click.spec.ts --project=\"Google Chrome\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.54.2",
-    "@types/node": "^24.2.0"
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.5.2"
   },
   "dependencies": {
-    "dotenv": "^17.2.1",
-    "npm-check-updates": "^18.0.2"
+    "dotenv": "^17.2.2",
+    "npm-check-updates": "^18.3.0"
   }
 }
