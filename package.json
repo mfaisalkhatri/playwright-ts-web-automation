@@ -5,7 +5,8 @@
   "scripts": {
     "test_local": "npx playwright test --project=\"Google Chrome\"",
     "test_cloud": "npx playwright test --project=\"chrome:latest:macOS Sonoma@lambdatest\"",
-    "test_click": "npx playwright test specs/click.spec.ts --project=\"Google Chrome\""
+    "test_click": "npx playwright test specs/basic-click.spec.ts --project=\"Google Chrome\"",
+    "test_right_click": "npx playwright test specs/right-click.spec.ts --project=\"Google Chrome\""
   },
   "keywords": [],
   "author": "",
