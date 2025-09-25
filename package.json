@@ -9,7 +9,9 @@
     "test_right_click": "npx playwright test specs/right-click.spec.ts --project=\"Google Chrome\"",
     "test_double_click": "npx playwright test specs/double-click.spec.ts --project=\"Google Chrome\"",
     "test_hover_force_click": "npx playwright test specs/mouse-hover.spec.ts --project=\"Google Chrome\"",
-    "test_position_based_click": "npx playwright test specs/position-based-click.spec.ts --project=\"Google Chrome\""
+    "test_position_based_click": "npx playwright test specs/position-based-click.spec.ts --project=\"Google Chrome\"",
+    "test_click_with_modifier": "npx playwright test specs/click-with-modifier.spec.ts --project=\"Google Chrome\"",
+    "test_click_with_delay": "npx playwright test specs/click-with-delay.spec.ts --project=\"Google Chrome\""
   },
   "keywords": [],
   "author": "",
