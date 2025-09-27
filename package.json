@@ -12,7 +12,8 @@
     "test_position_based_click": "npx playwright test specs/position-based-click.spec.ts --project=\"Google Chrome\"",
     "test_click_with_modifier": "npx playwright test specs/click-with-modifier.spec.ts --project=\"Google Chrome\"",
     "test_click_with_delay": "npx playwright test specs/click-with-delay.spec.ts --project=\"Google Chrome\"",
-    "test_drag_and_drop": "npx playwright test specs/drag-and-drop.spec.ts --project=\"Google Chrome\""
+    "test_drag_and_drop": "npx playwright test specs/drag-and-drop.spec.ts --project=\"Google Chrome\"",
+    "test_drag_and_drop_manual": "npx playwright test specs/drag-and-drop-manual.spec.ts --project=\"Google Chrome\""
   },
   "keywords": [],
   "author": "",
