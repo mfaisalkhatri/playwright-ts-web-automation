@@ -1,4 +1,6 @@
-import { test, expect } from '@playwright/test'
+import test from '../../base/fixture'
+import { expect } from '@playwright/test'
+
 
 test('Test Mouse Click', async ({ page }) => {
  await page.goto('https://www.lambdatest.com/selenium-playground/')
