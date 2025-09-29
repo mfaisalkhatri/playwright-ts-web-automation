@@ -47,11 +47,8 @@ const test = base.test.extend({
         `${testInfo.title} - ${fileName}`
       );
 
-      const browser = await chromium.connect({
-        wsEndpoint: `wss://cdp.lambdatest.com/playwright?capabilities=${encodeURIComponent(
-          JSON.stringify(capabilities)
-        )}`,
-      });
+    const browser = await chromium.connect(`wss://cdp.lambdatest.com/playwright?capabilities=${encodeURIComponent(
+          JSON.stringify(capabilities))}`,)
 
       const ltPage = await browser.newPage(testInfo.project.use);
       await use(ltPage);
