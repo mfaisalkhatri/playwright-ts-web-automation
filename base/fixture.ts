@@ -38,7 +38,7 @@ const modifyCapabilities = (configName, testName) => {
 };
 
 const test = base.test.extend({
-  page: async ({ page, playwright }, use, testInfo) => {
+  page: async ({ page }, use, testInfo) => {
     // Configure LambdaTest platform for cross-browser testing
     let fileName = testInfo.file.split(path.sep).pop();
     if (testInfo.project.name.match(/lambdatest/)) {

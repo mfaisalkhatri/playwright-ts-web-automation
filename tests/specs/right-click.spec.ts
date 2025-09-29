@@ -1,4 +1,4 @@
-import { test } from '@playwright/test'
+import test from '../../base/fixture'
 
 test('Test Right Click', async ({ page }) => {
  await page.goto('https://www.lambdatest.com/selenium-playground/context-menu')
