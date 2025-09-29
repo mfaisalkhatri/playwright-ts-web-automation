@@ -4,18 +4,29 @@
   "main": "index.js",
   "scripts": {
     "test_local": "npx playwright test --project=\"Google Chrome\"",
-    "test_cloud": "npx playwright test --project=\"chrome:latest:macOS Sonoma@lambdatest\""
+    "test_cloud": "npx playwright test --project=\"chrome:latest:macOS Sonoma@lambdatest\"",
+    "test_click": "npx playwright test specs/basic-click.spec.ts --project=\"chrome:latest:macOS Sonoma@lambdatest\"",
+    "test_right_click": "npx playwright test specs/right-click.spec.ts --project=\"Google Chrome\"",
+    "test_double_click": "npx playwright test specs/double-click.spec.ts --project=\"Google Chrome\"",
+    "test_hover_force_click": "npx playwright test specs/mouse-hover.spec.ts --project=\"Google Chrome\"",
+    "test_position_based_click": "npx playwright test specs/position-based-click.spec.ts --project=\"Google Chrome\"",
+    "test_click_with_modifier": "npx playwright test specs/click-with-modifier.spec.ts --project=\"Google Chrome\"",
+    "test_click_with_delay": "npx playwright test specs/click-with-delay.spec.ts --project=\"Google Chrome\"",
+    "test_drag_and_drop": "npx playwright test specs/drag-and-drop.spec.ts --project=\"Google Chrome\"",
+    "test_drag_and_drop_manual": "npx playwright test specs/drag-and-drop-manual.spec.ts --project=\"Google Chrome\"",
+    "test_slider": "npx playwright test specs/slider.spec.ts --project=\"Google Chrome\"",
+    "test_programmatic_click": "npx playwright test specs/programmatic-click.spec.ts --project=\"Google Chrome\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.54.2",
-    "@types/node": "^24.2.0"
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.5.2"
   },
   "dependencies": {
-    "dotenv": "^17.2.1",
-    "npm-check-updates": "^18.0.2"
+    "dotenv": "^17.2.2",
+    "npm-check-updates": "^18.3.0"
   }
 }
