@@ -22,8 +22,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.55.1",
-    "@types/node": "^24.5.2"
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^20.14.9"
   },
   "dependencies": {
     "dotenv": "^17.2.2",
