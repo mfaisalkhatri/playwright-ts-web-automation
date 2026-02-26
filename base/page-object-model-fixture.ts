@@ -11,11 +11,12 @@ type pages = {
 };
 
 dotenv.config({ path: path.resolve(__dirname, '.env') });
+
 const capabilities = {
   browserName: "Chrome",
   browserVersion: "latest",
   "LT:Options": {
-    platform: "macOS Sonoma OS",
+    platform: "Windows 10",
     build: "Playwright Test Build",
     name: "End to End test ",
     user: process.env.LT_USERNAME,
@@ -44,17 +45,19 @@ const getErrorMessage = (obj, keys) =>
     obj
   );
 
-const testPages = baseTest.extend<pages,{workerStorageState: string;}>({
+const testPages = baseTest.extend<pages, {workerStorageState: string;}>({
   page: async ({}, use, testInfo) => {
-    if (testInfo.project.name.match(/lambdatest/)) {
+    if (testInfo.project.name.includes("lambdatest")) {
+      console.log("Running on LambdaTest");
       modifyCapabilities(testInfo.project.name, `${testInfo.title}`);
-      const browser =
-        await chromium.connect(`wss://cdp.lambdatest.com/playwright?capabilities=
-        ${encodeURIComponent(JSON.stringify(capabilities))}`);
+      
+      const wsEndpoint = `wss://cdp.lambdatest.com/playwright?capabilities=${encodeURIComponent(JSON.stringify(capabilities))}`;
+      
+      const browser = await chromium.connect(wsEndpoint);
       const context = await browser.newContext(testInfo.project.use);
       const ltPage = await context.newPage();
+      
       await use(ltPage);
-
       const testStatus = {
         action: "setTestStatus",
         arguments: {
@@ -62,31 +65,40 @@ const testPages = baseTest.extend<pages,{workerStorageState: string;}>({
           remark: getErrorMessage(testInfo, ["error", "message"]),
         },
       };
-      await ltPage.evaluate(() => {},
-      `lambdatest_action: ${JSON.stringify(testStatus)}`);
+      
+      await ltPage.evaluate(() => {}, `lambdatest_action: ${JSON.stringify(testStatus)}`);
       await ltPage.close();
       await context.close();
       await browser.close();
     } else {
+      console.log("Running on Local Chromium");
       const browser = await chromium.launch();
       const context = await browser.newContext();
       const page = await context.newPage();
+      
       await use(page);
+    
+      await page.close();
+      await context.close();
+      await browser.close();
     }
   },
 
   homePage: async ({ page }, use) => {
     await use(new HomePage(page));
   },
+  
   registrationPage: async ({ page }, use) => {
     await use(new RegistrationPage(page));
   },
+  
   storageState: ({ workerStorageState}, use) => use(workerStorageState),
+  
   workerStorageState: [
     async ({ browser }, use) => {
-      const id = test.info().parallelIndex;
+      const id = baseTest.info().parallelIndex;
       const fileName = path.resolve(
-        test.info().project.outputDir,
+        baseTest.info().project.outputDir,
         `.auth/${id}.json`
       );
     
@@ -109,11 +121,13 @@ const testPages = baseTest.extend<pages,{workerStorageState: string;}>({
       await expect(myAccountPage.pageHeader).toBeVisible();
     
       await page.context().storageState({ path: fileName });
+      await page.close();
 
       await use(fileName);
     },
     { scope: "worker" },
   ],
 });
-
 export const test = testPages;
+
+export { expect };

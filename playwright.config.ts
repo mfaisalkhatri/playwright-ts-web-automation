@@ -6,7 +6,6 @@ const config: PlaywrightTestConfig = {
     projects: [
         { 
             name: "chrome:latest:macOS Sonoma@lambdatest",
-        
             use: {
                 viewport: { width: 1920, height: 1080 },
             },
@@ -31,7 +30,7 @@ const config: PlaywrightTestConfig = {
             }
         }
     ],
-    testDir: "./tests",
+    testDir: "./tests/specs/",
 
     use: {
         baseURL: "https://ecommerce-playground.lambdatest.io/",
@@ -42,7 +41,7 @@ const config: PlaywrightTestConfig = {
              slowMo: 100
         },
     },
-    timeout: 60 * 1000 * 5,
+    timeout: 60 * 1000 * 1,
     retries: 0,
     reporter: [["dot"], ["json", {
         outputFile: "jsonReports/jsonReport.json"
